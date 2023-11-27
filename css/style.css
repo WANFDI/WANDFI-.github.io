@@ -51,6 +51,29 @@ h2 {
     font-size: 20px;
     border: 1px solid black;
     height: 55px;
-    width: 100px;
+    width: 110px;
     margin: 10px;
 }
+.square
+{
+    font-family: cyberpunk;
+}
+
+img{
+    width: 125px;
+    border-radius: 60%;
+}
+footer{
+    display: flex;
+    justify-content:space-between;
+   
+}
+
+
+
+@font-face {
+    font-family: cyberpunk;
+    src: url("../js/Cyberpunk-Regular.ttf");
+}
+
+
