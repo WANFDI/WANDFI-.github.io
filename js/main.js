@@ -15,6 +15,8 @@ const winningCombos = [
 let board;
 let turn = 'X';
 let win;
+let active_by_restart; //S'active seulement si click sur restart
+ 
 
 /*----- cached element references -----*/
 
@@ -60,7 +62,28 @@ function render() {
     //this moves the value of the board item into the squares[idx]
     squares[index].textContent = mark;
     });
-    messages.textContent = win === 'T' ? `That's a tie, queen!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
-    };
+    messages.textContent = win === 'T' ? `Partie nulle!` : win ? `${win} a gagné le jeu!` : `C'est le tour de ${turn}!`;
+    }
+      
+
+    // point au gagnant de la partie
+    if(win == "O" || win == "X" && active_by_restart == partienulle) 
+    {
+    if(win == "O")
+    {
+    point_O++
+    }
+ 
+    if(win == "X")
+    {
+    point_X++
+    }
+ 
+    }
+    console.log("Les O ont " + point_O + " point");
+    console.log("Les X ont " + point_X + " point");
+    localStorage.setItem("Les X ont gagné", point_X ,"fois");
+    localStorage.setItem("Les O ont gagné", point_O ,"fois");
+ 
 
 init();
